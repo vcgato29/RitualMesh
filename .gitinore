@@ -1,0 +1,49 @@
+# === Ruby Artifacts ===
+*.gem
+*.rbc
+.bundle/
+vendor/bundle/
+log/
+tmp/
+*.log
+
+# === Environment Files ===
+.env
+.env.*
+.byebug_history
+.ruby-version
+.ruby-gemset
+
+# === macOS Clutter ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+
+# === Editor/IDE Files ===
+*.swp
+*.swo
+*.sublime*
+.idea/
+.vscode/
+
+# === System ===
+*.bak
+*.old
+*.orig
+
+# === Xcode Ritual Override ===
+/Applications/XcodeBetaNoSpace.app
+/Users/victorj/Downloads/Xcode-beta 3.app
+
+# === Ritual Mesh Protected Files ===
+ritualmesh.pid
+ritual.env
+ritual_tokens.json
+.zshrc.secret
+

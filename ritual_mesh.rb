@@ -13,20 +13,20 @@ class RitualMesh
     log "Ritual Mesh initialized. ID: #{@id}"
   end
 
-  def run
-    @genesis.activate
-    loop do
-      print "\n⛩️  Invoke > "
-      cmd = gets.strip
-      break if cmd == 'exit'
-      @invoker.invoke(cmd)
+def run
+  puts ">> Invoke >"
+  while input = gets&.chomp
+    case input
+    when "init"
+      puts ":: INIT: Ritual system initialized."
+    when "summon"
+      puts ":: SUMMON: Invocation successful."
+    # Add more ritual commands here...
+
+    else
+      # Pass unknown commands to the system shell
+      system(input) || puts("Unknown invocation: #{input}")
     end
   end
-
-  def log(msg)
-    puts "[#{Time.now}] :: #{msg}"
-  end
 end
-
-RitualMesh.new.run
 
