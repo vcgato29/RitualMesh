@@ -1,0 +1,31 @@
+import hashlib
+from cryptography.hazmat.primitives import serialization
+
+with open('/Users/victorjcorral/.ssh/id_rsa',) as key_file:
+    private_key = serialization.load_pem_private_key(
+        key_file.read(),
+        password=RitualMesh,  # or your passphrase as bytes
+    )
+def generate_keys():
+    return rsa.newkeys(512)
+
+def hash_hostname(hname):
+    return hashlib.sha256(hname.encode()).hexdigest()[:8]  # mimic IPv4 space
+
+def register_hostname(hname, pub_key, priv_key):
+    h_ip = hash_hostname(hname)
+    signature = rsa.sign(hname.encode(), priv_key, 'SHA-1')
+    counter_node = hash_hostname(pub_key.save_pkcs1().decode())
+
+    registration_packet = {
+        "hostname": hname,
+        "hashed_ip": h_ip,
+        "pub_key": pub_key.save_pkcs1().decode(),
+        "signature": signature.hex()
+    }
+
+    print(f"Send to gnode: {h_ip} → store DNS entry")
+    print(f"Counter node: {counter_node} → validate registration limit")
+
+    return registration_packet
+
