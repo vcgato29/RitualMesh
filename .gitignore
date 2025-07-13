@@ -34,7 +34,7 @@ Icon?
 
 # === Xcode Ritual Override ===
 /Applications/XcodeBetaNoSpace.app
-/Users/victorj/Downloads/Xcode-beta 3.app
+/Users/victorj/Downloads/Xcode-beta\ 3.app
 
 # === Ritual Mesh Protected Files ===
 ritualmesh.pid
